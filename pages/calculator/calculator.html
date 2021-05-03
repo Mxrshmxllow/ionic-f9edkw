@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Calculator
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Ideal Weight Calculator</h2>
+  <p>
+    Remember that the values found with our ideal body weight calculator are not one hundred percent valid for all. As long as you are in the BMI normal weight range, you are fine - don't go on a strict diet just to reach that specific number!
+  </p>
+  <p>
+    Also, our IBW calculator is valid for adults only, working only for heights 5 feet and above. Don't use it to find the proper weight range of kids - consult a specialist instead.
+  </p>
+  <h5>Your Height In:</h5>
+  <ion-list>
+
+  <ion-item>
+    <ion-label color="dark">Feet:</ion-label>
+    <ion-input type="number" [(ngModel)]="feet"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="dark">Inches:</ion-label>
+    <ion-input type="number" [(ngModel)]="inches"></ion-input>
+  </ion-item>
+  <h5>Gender:</h5>
+  <ion-item>
+    <ion-label color="dark"> Choose: </ion-label>
+    <ion-select interface="popover" [(ngModel)]="gender">
+      <ion-option value="m">Male</ion-option>
+      <ion-option value="f">Female</ion-option>
+    </ion-select>
+  </ion-item>
+  <button ion-button color="secondary" (click)="calculateIBW()">
+    Calculate
+  </button>
+
+    <ion-item *ngIf="robinson">
+    <h2>Ideal Weight ({{genderstring}}) According to:</h2>
+    <p>Robinson (1983): {{robinson}}</p>
+    <p>Miller (1983): {{miller}}</p>
+    <p>Hamwi (1964): {{hamwi}}</p>
+    <p>Devine (1974): {{devine}}</p>
+  
+  </ion-item>
+
+
+
+
+
